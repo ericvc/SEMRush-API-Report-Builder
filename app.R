@@ -1,23 +1,36 @@
-# devtools::install_github("ericvc/semRush")
+#devtools::install_github("ericvc/semRush")
 
+
+## SEMRush Report Builder (v1):
+#This R Shiny app simplifies the creation of customized SEO / marketing reports from
+#data obtained through the SEMRush REST API. Five report topics (advertising, backlinks, domain, keyword, and overview)
+#are supported. For each report topic, the menu options are displayed dynamically (and conditionally) using tabsetPanel
+#functionality. The sidebar menu for each report topic is defined by its own tabPaenl function. Although some report 
+#topics share input variables (e.g., "database"), the input variables for each topic are unique for the purposes of 
+#creating this app. Input and UI variables will not work properly if they appear in more  than one tabPanel group. 
+
+## Load packages
 library(tidyverse)
 library(shiny)
 library(shinyjs)
 library(dashboardthemes)
 library(shinydashboard)
+library(assertthat)
 
 ## Load functions in current working directory
 src_files <- list.files("semRush/", full.names = TRUE)
-sapply(src_files, function(x)
-  source(x))
+sapply(src_files, function(x) source(x))
+
 
 ## Attach API keys
 #See the "api_keys_example.json" for a template
 attach(jsonlite::read_json("api_keys.json"))
 
+
 ## Get menu content
 db_codes = read.csv(
-  "menu/semrush_database_codes.csv",
+  "menu/semrush_database_codes.csv", 
+  encoding = "UTF-8",
   header = TRUE,
   stringsAsFactors = FALSE
 )
@@ -25,6 +38,7 @@ db_codes = read.csv(
 menuOpts = read.csv("menu/sidebar_menu_options.csv",
                     header = TRUE,
                     stringsAsFactors = FALSE)
+
 
 ## Define body (UI)
 body <- dashboardBody(
@@ -42,16 +56,10 @@ body <- dashboardBody(
       "
     )
     )),
-  ### changing theme
   shinyDashboardThemes(theme = "grey_light"),
   fluidPage(
-    style = "height:100%;margin-left:100px;margin-right:100px",
-    h5(
-      "Advertising Report generator.
-      Select inputs for each feature or leave blank for default settings.
-      Query the SEMRush data API and download a tabulated report.
-      The generated report can be saved as a .CSV file using the 'Save' button."
-    ),
+    style = "height:100%;margin-left:6%;margin-right:6%",
+    HTML("<p style='font-size:18px'>Advertising Report generator. Select inputs for each feature or leave blank for default settings. Query the SEMRush data API and download a tabulated report. The generated report can be saved as a .CSV file using the 'Save' button.</p>"),
     shinyjs::hidden(actionButton(
       "submit",
       "Submit",
@@ -60,8 +68,13 @@ body <- dashboardBody(
     ))
     ),
   fluidRow(
-    style = "height:100%;margin-left:100px;margin-right:100px",
-    uiOutput("account_balance"),
+    style = "height:100%;margin-left:7%;margin-right:7%",
+    HTML("<b><a style='color:black' href='https://www.semrush.com/api-analytics/#columns'>SEMRush API Export Column Details</a><b>"),
+    br(),
+    uiOutput("account_balance")
+  ),
+  fluidRow(
+    style = "height:100%;margin-left:4%;margin-right:4%",
     br(),
     br(),
     DT::dataTableOutput(outputId = "Table", width = "100%"),
@@ -338,8 +351,9 @@ sidebar <- dashboardSidebar(
                icon = icon("table"))
     )
 
-## UI
-ui = dashboardPage(
+
+## Assemble UI
+ui = dashboardPage(title="SEMRush Report Builder",
   dashboardHeader(
   title = HTML("<b><i>SEMRush Report Builder</i></b>"),
   titleWidth =
@@ -349,6 +363,7 @@ sidebar,
 body)
 
 
+## Define server logic
 server <- function(input, output, session) {
   # Select menu options from report type
   observeEvent(input$report, {
@@ -560,14 +575,14 @@ server <- function(input, output, session) {
   # Display report descriptions
   description_adv <- reactive({
     x <- filter(type_adv(), option == "description")
-    args. <- strsplit(x$args, ";") %>% unlist()
+    args. <- x$args#strsplit(x$args, ";") %>% unlist()
     tag <-
       HTML(
         paste0(
           "<b style='margin-left:10px;color:gray90;text-align:center;'><u>Description: </u></b>",
-          "<p style='margin-left:10px;margin-right:10px'><i>",
+          "<p style='margin-left:10px;margin-right:10px'>",
           paste0(args., collapse = ",  "),
-          "</i></p>",
+          "</p>",
           collapse = ""
         )
       )
@@ -576,14 +591,14 @@ server <- function(input, output, session) {
   
   description_bac <- reactive({
     x <- filter(type_bac(), option == "description")
-    args. <- strsplit(x$args, ";") %>% unlist()
+    args. <- x$args#strsplit(x$args, ";") %>% unlist()
     tag <-
       HTML(
         paste0(
           "<b style='margin-left:10px;color:gray90;text-align:center;'><u>Description: </u></b>",
-          "<p style='margin-left:10px;margin-right:10px'><i>",
+          "<p style='margin-left:10px;margin-right:10px'>",
           paste0(args., collapse = ",  "),
-          "</i></p>",
+          "</p>",
           collapse = ""
         )
       )
@@ -592,14 +607,14 @@ server <- function(input, output, session) {
   
   description_dom <- reactive({
     x <- filter(type_dom(), option == "description")
-    args. <- strsplit(x$args, ";") %>% unlist()
+    args. <- x$args#strsplit(x$args, ";") %>% unlist()
     tag <-
       HTML(
         paste0(
           "<b style='margin-left:10px;color:gray90;text-align:center;'><u>Description: </u></b>",
-          "<p style='margin-left:10px;margin-right:10px'><i>",
+          "<p style='margin-left:10px;margin-right:10px'>",
           paste0(args., collapse = ",  "),
-          "</i></p>",
+          "</p>",
           collapse = ""
         )
       )
@@ -608,14 +623,14 @@ server <- function(input, output, session) {
   
   description_key <- reactive({
     x <- filter(type_key(), option == "description")
-    args. <- strsplit(x$args, ";") %>% unlist()
+    args. <- x$args#strsplit(x$args, ";") %>% unlist()
     tag <-
       HTML(
         paste0(
           "<b style='margin-left:10px;color:gray90;text-align:center;'><u>Description: </u></b>",
-          "<p style='margin-left:10px;margin-right:10px'><i>",
+          "<p style='margin-left:10px;margin-right:10px'>",
           paste0(args., collapse = ",  "),
-          "</i></p>",
+          "</p>",
           collapse = ""
         )
       )
@@ -624,14 +639,14 @@ server <- function(input, output, session) {
   
   description_ove <- reactive({
     x <- filter(type_ove(), option == "description")
-    args. <- strsplit(x$args, ";") %>% unlist()
+    args. <- x$args#strsplit(x$args, ";") %>% unlist()
     tag <-
       HTML(
         paste0(
           "<b style='margin-left:10px;color:gray90;text-align:center;'><u>Description: </u></b>",
-          "<p style='margin-left:10px;margin-right:10px'><i>",
+          "<p style='margin-left:10px;margin-right:10px'>",
           paste0(args., collapse = ",  "),
-          "</i></p>",
+          "</p>",
           collapse = ""
         )
       )
@@ -644,9 +659,8 @@ server <- function(input, output, session) {
     bal <-
       HTML(
         paste0(
-          "<b style='font-size:20px'><a href='https://www.semrush.com/api-analytics/'>",
-          bal,
-          " API units remaining",
+          "<b><a style='color:black' href='https://www.semrush.com/api-analytics/'>",
+          sprintf("Account API Balance: %s", bal),
           "</a></b>"
         )
       )
@@ -771,4 +785,6 @@ server <- function(input, output, session) {
   
 }
 
+
+## Run app
 shinyApp(ui, server)

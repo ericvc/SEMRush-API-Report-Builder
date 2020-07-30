@@ -1,0 +1,13 @@
+name: SEMRush-Report-Builder
+title: SEMRush-Report-Builder
+username:
+account: tivbranding
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2628331
+bundleId: 3456542
+url: https://tivbranding.shinyapps.io/SEMRush-Report-Builder/
+when: 1596146204.29698
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: api_keys_example.json

@@ -4,38 +4,38 @@ advertising,publisher_text_ads,display_limit,
 advertising,publisher_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
 advertising,publisher_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,publisher_text_ads,required,domain
-advertising,publisher_text_ads,description,This report lists display ads that have appeared on a publisher’s website.
+advertising,publisher_text_ads,description,This report lists display ads that have appeared on a publisher's website.
 advertising,publisher_advertisers,domain,example.com
 advertising,publisher_advertisers,display_limit,
 advertising,publisher_advertisers,export_columns,domain;ads_count;first_seen;last_seen;times_seen
 advertising,publisher_advertisers,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,publisher_advertisers,required,advertiser;publisher
-advertising,publisher_advertisers,description,This report lists advertisers whose display ads have appeared on a queried publisher’s website.
+advertising,publisher_advertisers,description,This report lists advertisers whose display ads have appeared on a queried publisher's website.
 advertising,advertiser_publishers,domain,example.com
 advertising,advertiser_publishers,display_limit,
 advertising,advertiser_publishers,export_columns,domain;ads_count;first_seen;last_seen;times_seen
 advertising,advertiser_publishers,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,advertiser_publishers,required,advertiser;publisher
-advertising,advertiser_publishers,description,This report lists publisher’s websites where an advertiser’s display ads have appeared.
+advertising,advertiser_publishers,description,This report lists publisher's websites where an advertiser's display ads have appeared.
 advertising,advertiser_text_ads,domain,example.com
 advertising,advertiser_text_ads,display_limit,
 advertising,advertiser_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
 advertising,advertiser_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,advertiser_text_ads,required,domain
-advertising,advertiser_text_ads,description,This report lists display ads of a queried advertiser’s website.
+advertising,advertiser_text_ads,description,This report lists display ads of a queried advertiser's website.
 advertising,advertiser_landings,domain,example.com
 advertising,advertiser_landings,display_limit,
 advertising,advertiser_landings,export_columns,target_url;first_seen;last_seen;times_seen;ads_count
 advertising,advertiser_landings,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,advertiser_landings,required,domain
-advertising,advertiser_landings,description,This report lists URLs of a domain’s landing pages promoted via display ads.
+advertising,advertiser_landings,description,This report lists URLs of a domain's landing pages promoted via display ads.
 advertising,advertiser_publisher_text_ads,advertiser_domain,example.com
 advertising,advertiser_publisher_text_ads,publisher_domain,example.com
 advertising,advertiser_publisher_text_ads,display_limit,
 advertising,advertiser_publisher_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
 advertising,advertiser_publisher_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
 advertising,advertiser_publisher_text_ads,required,advertiser;publisher
-advertising,advertiser_publisher_text_ads,description,This report lists the display ads of a given advertiser that have appeared on a particular publisher’s website.
+advertising,advertiser_publisher_text_ads,description,This report lists the display ads of a given advertiser that have appeared on a particular publisher's website.
 advertising,advertiser_rank,domain,example.com
 advertising,advertiser_rank,display_limit,
 advertising,advertiser_rank,export_columns,domain;ads_overall;text_ads_overall;media_ads_overall;first_seen;last_seen;times_seen;domain_overall
@@ -71,13 +71,13 @@ domain,domain_organic_organic,database,
 domain,domain_organic_organic,display_limit,
 domain,domain_organic_organic,export_columns,Dn;Cr;Np;Or;Ot;Oc;Ad
 domain,domain_organic_organic,required,domain;database
-domain,domain_organic_organic,description,This report lists a domain’s competitors in organic search results.
+domain,domain_organic_organic,description,This report lists a domain's competitors in organic search results.
 domain,domain_adwords_adwords,domain,
 domain,domain_adwords_adwords,database,
 domain,domain_adwords_adwords,display_limit,
 domain,domain_adwords_adwords,export_columns,Dn;Cr;Np;Ad;At;Ac;Or
 domain,domain_adwords_adwords,required,domain;database
-domain,domain_adwords_adwords,description,This report lists a domain’s competitors in paid search results.
+domain,domain_adwords_adwords,description,This report lists a domain's competitors in paid search results.
 domain,domain_adwords_historical,domain,
 domain,domain_adwords_historical,database,
 domain,domain_adwords_historical,display_limit,
@@ -95,7 +95,7 @@ domain,domain_shopping,database,
 domain,domain_shopping,display_limit,
 domain,domain_shopping,export_columns,Ph;Po;Pp;Pd;Nq;Sn;Ur;Tt;Pr;Ts
 domain,domain_shopping,required,domain;database
-domain,domain_shopping,description,This report lists keywords that trigger a domain’s product listing ads to appear in Google's paid search results.
+domain,domain_shopping,description,This report lists keywords that trigger a domain's product listing ads to appear in Google's paid search results.
 domain,domain_shopping_unique,domain,
 domain,domain_shopping_unique,database,
 domain,domain_shopping_unique,display_limit,
@@ -255,18 +255,18 @@ overview,domain_ranks,database,
 overview,domain_ranks,display_limit,
 overview,domain_ranks,export_columns,Db;Dt;Dn;Rk;Or;Ot;Oc;Ad;At;Ac;Sh;Sv;FKn;FPn
 overview,domain_ranks,required,domain
-overview,domain_ranks,description,This report provides live or historical data on a domain’s keyword rankings in both organic and paid search in all regional databases.
+overview,domain_ranks,description,This report provides live or historical data on a domain's keyword rankings in both organic and paid search in all regional databases.
 overview,domain_rank,domain,
 overview,domain_rank,database,
 overview,domain_rank,export_columns,Dn;Rk;Or;Xn;Ot;Oc;Ad;At;Ac;FKn;FPn
 overview,domain_rank,required,domain;database
-overview,domain_rank,description,This report provides live or historical data on a domain’s keyword rankings in both organic and paid search in a chosen regional database.
+overview,domain_rank,description,This report provides live or historical data on a domain's keyword rankings in both organic and paid search in a chosen regional database.
 overview,domain_rank_history,domain,
 overview,domain_rank_history,database,
 overview,domain_rank_history,display_limit,
 overview,domain_rank_history,export_columns,Rk;Or;Xn;Ot;Oc;Ad;At;Ac;Dt;FKn;FPn
 overview,domain_rank_history,required,domain;database
-overview,domain_rank_history,description,This report provides live and historical data on a domain’s keyword rankings in both organic and paid search in a chosen database.
+overview,domain_rank_history,description,This report provides live and historical data on a domain's keyword rankings in both organic and paid search in a chosen database.
 overview,rank_difference,database,
 overview,rank_difference,display_limit,
 overview,rank_difference,export_columns,Dn;Rk;Or;Ot;Oc;Ad;At;Ac;Om;Tm;Um;Am;Bm;Cm
