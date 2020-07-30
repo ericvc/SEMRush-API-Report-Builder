@@ -1,0 +1,279 @@
+report,type,option,args
+advertising,publisher_text_ads,domain,example.com
+advertising,publisher_text_ads,display_limit,
+advertising,publisher_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
+advertising,publisher_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,publisher_text_ads,required,domain
+advertising,publisher_text_ads,description,This report lists display ads that have appeared on a publisher’s website.
+advertising,publisher_advertisers,domain,example.com
+advertising,publisher_advertisers,display_limit,
+advertising,publisher_advertisers,export_columns,domain;ads_count;first_seen;last_seen;times_seen
+advertising,publisher_advertisers,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,publisher_advertisers,required,advertiser;publisher
+advertising,publisher_advertisers,description,This report lists advertisers whose display ads have appeared on a queried publisher’s website.
+advertising,advertiser_publishers,domain,example.com
+advertising,advertiser_publishers,display_limit,
+advertising,advertiser_publishers,export_columns,domain;ads_count;first_seen;last_seen;times_seen
+advertising,advertiser_publishers,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,advertiser_publishers,required,advertiser;publisher
+advertising,advertiser_publishers,description,This report lists publisher’s websites where an advertiser’s display ads have appeared.
+advertising,advertiser_text_ads,domain,example.com
+advertising,advertiser_text_ads,display_limit,
+advertising,advertiser_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
+advertising,advertiser_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,advertiser_text_ads,required,domain
+advertising,advertiser_text_ads,description,This report lists display ads of a queried advertiser’s website.
+advertising,advertiser_landings,domain,example.com
+advertising,advertiser_landings,display_limit,
+advertising,advertiser_landings,export_columns,target_url;first_seen;last_seen;times_seen;ads_count
+advertising,advertiser_landings,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,advertiser_landings,required,domain
+advertising,advertiser_landings,description,This report lists URLs of a domain’s landing pages promoted via display ads.
+advertising,advertiser_publisher_text_ads,advertiser_domain,example.com
+advertising,advertiser_publisher_text_ads,publisher_domain,example.com
+advertising,advertiser_publisher_text_ads,display_limit,
+advertising,advertiser_publisher_text_ads,export_columns,title;text;first_seen;last_seen;times_seen;visible_url
+advertising,advertiser_publisher_text_ads,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,advertiser_publisher_text_ads,required,advertiser;publisher
+advertising,advertiser_publisher_text_ads,description,This report lists the display ads of a given advertiser that have appeared on a particular publisher’s website.
+advertising,advertiser_rank,domain,example.com
+advertising,advertiser_rank,display_limit,
+advertising,advertiser_rank,export_columns,domain;ads_overall;text_ads_overall;media_ads_overall;first_seen;last_seen;times_seen;domain_overall
+advertising,advertiser_rank,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,advertiser_rank,required,domain
+advertising,advertiser_rank,description,This report lists advertisers ranked by the total number of display ads noticed by SEMrush.
+advertising,publisher_rank,domain,example.com
+advertising,publisher_rank,display_limit,
+advertising,publisher_rank,export_columns,domain;ads_overall;text_ads_overall;media_ads_overall;first_seen;last_seen;times_seen;domain_overall
+advertising,publisher_rank,device_type,all;desktop;smartphone_apple;smartphone_android;tablet_apple;tablet_android
+advertising,publisher_rank,required,domain
+advertising,publisher_rank,description,This report lists publishers ranked by the total number of display ads noticed by SEMrush.
+domain,domain_organic,domain,
+domain,domain_organic,database,
+domain,domain_organic,display_limit,
+domain,domain_organic,export_columns,Ph;Po;Pp;Pd;Nq;Cp;Ur;Tr;Tg;Tc;Co;Nr;Td;Kd;Fp;Fk;Ts
+domain,domain_organic,required,domain;database
+domain,domain_organic,description,This report lists keywords that bring users to a domain via Google's top 100 organic search results.
+domain,domain_adwords,domain,
+domain,domain_adwords,database,
+domain,domain_adwords,display_limit,
+domain,domain_adwords,export_columns,Ph;Po;Pp;Pd;Ab;Nq;Cp;Tg;Tr;Tc;Co;Nr;Td;Tt;Ds;Vu;Ur;Ts;Un
+domain,domain_adwords,required,domain;database
+domain,domain_adwords,description,This report lists keywords that bring users to a domain via Google's paid search results.
+domain,domain_adwords_unique,domain,
+domain,domain_adwords_unique,database,
+domain,domain_adwords_unique,display_limit,
+domain,domain_adwords_unique,export_columns,Ph;Un;Tt;Ds;Vu;Ur;Pc;Ts
+domain,domain_adwords_unique,required,domain;database
+domain,domain_adwords_unique,description,This report shows unique ad copies SEMrush noticed when the domain ranked in Google's paid search results for keywords from our databases.
+domain,domain_organic_organic,domain,
+domain,domain_organic_organic,database,
+domain,domain_organic_organic,display_limit,
+domain,domain_organic_organic,export_columns,Dn;Cr;Np;Or;Ot;Oc;Ad
+domain,domain_organic_organic,required,domain;database
+domain,domain_organic_organic,description,This report lists a domain’s competitors in organic search results.
+domain,domain_adwords_adwords,domain,
+domain,domain_adwords_adwords,database,
+domain,domain_adwords_adwords,display_limit,
+domain,domain_adwords_adwords,export_columns,Dn;Cr;Np;Ad;At;Ac;Or
+domain,domain_adwords_adwords,required,domain;database
+domain,domain_adwords_adwords,description,This report lists a domain’s competitors in paid search results.
+domain,domain_adwords_historical,domain,
+domain,domain_adwords_historical,database,
+domain,domain_adwords_historical,display_limit,
+domain,domain_adwords_historical,export_columns,Ph;Dt;Po;Cp;Nq;Tr;Ur;Tt;Ds;Vu;Cv
+domain,domain_adwords_historical,required,domain;database
+domain,domain_adwords_historical,description,This report shows keywords a domain has bid on in the last 12 months and its positions in paid search results.
+domain,domain_domains,domain,
+domain,domain_domains,database,
+domain,domain_domains,display_limit,
+domain,domain_domains,export_columns,Ph;P0;P1;P2;P3;P4;Nr;Cp;Nq;Kd;Co;Td
+domain,domain_domains,required,domains;database
+domain,domain_domains,description,"This report allows users to compare up to five domains by common keywords, unique keywords, all keywords, or search terms that are unique to the first domain."
+domain,domain_shopping,domain,
+domain,domain_shopping,database,
+domain,domain_shopping,display_limit,
+domain,domain_shopping,export_columns,Ph;Po;Pp;Pd;Nq;Sn;Ur;Tt;Pr;Ts
+domain,domain_shopping,required,domain;database
+domain,domain_shopping,description,This report lists keywords that trigger a domain’s product listing ads to appear in Google's paid search results.
+domain,domain_shopping_unique,domain,
+domain,domain_shopping_unique,database,
+domain,domain_shopping_unique,display_limit,
+domain,domain_shopping_unique,export_columns,Tt;Pr;Ur;Pc;Un;Ts
+domain,domain_shopping_unique,required,domain;database
+domain,domain_shopping_unique,description,This report shows product listing ad copies SEMrush noticed when the domain ranked in Google's paid search results for keywords from our databases.
+domain,domain_shopping_shopping,domain,
+domain,domain_shopping_shopping,database,
+domain,domain_shopping_shopping,display_limit,
+domain,domain_shopping_shopping,export_columns,Dn;Cr;Np;Sh;Ad;At;Ac;Or
+domain,domain_shopping_shopping,required,domain;database
+domain,domain_shopping_shopping,description,This report lists domains a queried domain is competing against in Google's paid search results with product listing ads.
+domain,domain_organic_unique,domain,
+domain,domain_organic_unique,database,
+domain,domain_organic_unique,display_limit,
+domain,domain_organic_unique,export_columns,Ur;Pc;Tg;Tr
+domain,domain_organic_unique,required,domain;database
+domain,domain_organic_unique,description,This report shows unique pages of the analyzed domain ranking in Google's top 100 results organic search results
+domain,domain_organic_subdomains,domain,
+domain,domain_organic_subdomains,database,
+domain,domain_organic_subdomains,display_limit,
+domain,domain_organic_subdomains,export_columns,Ur;Pc;Tg;Tr
+domain,domain_organic_subdomains,required,domain;database
+domain,domain_organic_subdomains,description,This report shows subdomains of the analyzed domain ranking in Google's top 100 organic search results
+backlinks,backlinks_overview,target,
+backlinks,backlinks_overview,target_type,
+backlinks,backlinks_overview,export_columns,ascore;total;domains_num;urls_num;ips_num;ipclassc_num;follows_num;nofollows_num;sponsored_num;ugc_num;texts_num;images_num;forms_num;frames_num
+backlinks,backlinks_overview,required,target;target_type
+backlinks,backlinks_overview,description,"This report provides a summary of backlinks, including their type, referring domains and IP addresses for a domain, root domain, or URL."
+backlinks,backlinks,target,
+backlinks,backlinks,target_type,
+backlinks,backlinks,display_limit,
+backlinks,backlinks,export_columns,page_ascore;response_code;source_size;external_num;internal_num;redirect_url;source_url;source_title;image_url;target_url;target_title;anchor;image_alt;last_seen;first_seen;nofollow;form;frame;image;sitewide;newlink;lostlink
+backlinks,backlinks,required,target;target_type
+backlinks,backlinks,description,"This report lists backlinks for a domain, root domain, or URL."
+backlinks,backlinks_refdomains,target,
+backlinks,backlinks_refdomains,target_type,
+backlinks,backlinks_refdomains,display_limit,
+backlinks,backlinks_refdomains,export_columns,domain_ascore;domain;backlinks_num;ip;country;first_seen;last_seen
+backlinks,backlinks_refdomains,required,target;target_type
+backlinks,backlinks_refdomains,description,"This report lists domains pointing to the queried domain, root domain, or URL."
+backlinks,backlinks_refips,target,
+backlinks,backlinks_refips,target_type,
+backlinks,backlinks_refips,display_limit,
+backlinks,backlinks_refips,export_columns,ip;country;domains_num;backlinks_num;first_seen;last_seen
+backlinks,backlinks_refips,required,target;target_type
+backlinks,backlinks_refips,description,"This report lists IP addresses where backlinks to a domain, root domain, or URL are coming from."
+backlinks,backlinks_tld,type,
+backlinks,backlinks_tld,target_type,
+backlinks,backlinks_tld,display_limit,
+backlinks,backlinks_tld,export_columns,zone;domains_num;backlinks_num
+backlinks,backlinks_tld,required,target;target_type
+backlinks,backlinks_tld,description,This report shows referring domain distributions depending on their top-level domain type.
+backlinks,backlinks_geo,target,
+backlinks,backlinks_geo,target_type,
+backlinks,backlinks_geo,display_limit,
+backlinks,backlinks_geo,export_columns,country;domains_num;backlinks_num
+backlinks,backlinks_geo,required,target;target_type
+backlinks,backlinks_geo,description,This report shows referring domain distributions by country (an IP address defines a country).
+backlinks,backlinks_anchors,target,
+backlinks,backlinks_anchors,target_type,
+backlinks,backlinks_anchors,display_limit,
+backlinks,backlinks_anchors,export_columns,anchor;domains_num;backlinks_num;first_seen;last_seen
+backlinks,backlinks_anchors,required,target;target_type
+backlinks,backlinks_anchors,description,"This report lists anchor texts used in backlinks leading to the queried domain, root domain, or URL. It also includes the number of backlinks and referring domains per anchor."
+backlinks,backlinks_pages,target,
+backlinks,backlinks_pages,target_type,
+backlinks,backlinks_pages,display_limit,
+backlinks,backlinks_pages,export_columns,source_url;source_title;response_code;backlinks_num;domains_num;last_seen;external_num;internal_num
+backlinks,backlinks_pages,required,target;target_type
+backlinks,backlinks_pages,description,This report shows indexed pages of the queried domain
+backlinks,backlinks_competitors,target,
+backlinks,backlinks_competitors,target_type,
+backlinks,backlinks_competitors,display_limit,
+backlinks,backlinks_competitors,export_columns,ascore;neighbour;similarity;common_refdomains;domains_num;backlinks_num
+backlinks,backlinks_competitors,required,target;target_type
+backlinks,backlinks_competitors,description,A list of domains with a similar backlink profile to the analyzed domain.
+backlinks,backlinks_ascore_profile,target,
+backlinks,backlinks_ascore_profile,target_type,
+backlinks,backlinks_ascore_profile,export_columns,
+backlinks,backlinks_ascore_profile,required,target;target_type
+backlinks,backlinks_ascore_profile,description,"This report returns distribution of referring domains by Authority Score. When you run a query for a domain, in return, for each Authority Score value [from 0 to 100], you receive a number of domains that have at least one link, pointing to queried domain."
+backlinks,backlinks_categories_profile,target,
+backlinks,backlinks_categories_profile,target_type,
+backlinks,backlinks_categories_profile,export_columns,category_name;rating
+backlinks,backlinks_categories_profile,required,target;target_type
+backlinks,backlinks_categories_profile,description,"This report returns the list of categories that referring domains belong to. When you run a query for a domain, in return, in each line, you receive a category and a number of domains that have at least one link, pointing to queried domain, that have such category. Results are sorted by a number of referring domains in descending order. This report is generated, based on the first 10,000 referring domains for given queried domain."
+backlinks,backlinks_categories,target,
+backlinks,backlinks_categories,target_type,
+backlinks,backlinks_categories,export_columns,category_name;rating
+backlinks,backlinks_categories,required,target;target_type
+backlinks,backlinks_categories,description,"This report returns the list of categories queried domain belong to. When you run a query for a domain, in return, in each line, you receive a category and a rating. Rating is a level of confidence that this domain belongs to this category (ranged from 0 to 1). Results are sorted by the rating."
+backlinks,backlinks_historical,target,
+backlinks,backlinks_historical,target_type,
+backlinks,backlinks_historical,timespan,
+backlinks,backlinks_historical,export_columns,date;backlinks_num;backlinks_new_num;backlinks_lost_num;domains_num;domains_new_num;domains_lost_num
+backlinks,backlinks_historical,required,target;target_type
+backlinks,backlinks_historical,description,"This report returns historical trends of number of backlinks and referring domains for queried domain. When you run a query for a domain, in return, in each line, you receive a date and a number of backlinks and referring domains queried domain had on this date. Results are sorted by date in descending order (from most recent to oldest)."
+keyword,phrase_all,phrase,
+keyword,phrase_all,database,
+keyword,phrase_all,export_columns,Dt;Db;Ph;Nq;Cp;Co;Nr
+keyword,phrase_all,required,keyword
+keyword,phrase_all,description,"This report provides a summary of a keyword, including its volume, CPC, competition, and the number of results in all regional databases."
+keyword,phrase_this,phrase,
+keyword,phrase_this,database,
+keyword,phrase_this,export_columns,Ph;Nq;Cp;Co;Nr;Td
+keyword,phrase_this,required,keyword;database
+keyword,phrase_this,description,"This report provides a summary of a keyword, including its volume, CPC, competition, and the number of results in a chosen regional database."
+keyword,phrase_these,phrase,
+keyword,phrase_these,database,
+keyword,phrase_these,export_columns,Ph;Nq;Cp;Co;Nr;Td
+keyword,phrase_these,required,keyword;database
+keyword,phrase_these,description,"This report provides a summary of up to 100 keywords, including its volume, CPC, competition, and the number of results in a chosen regional database."
+keyword,phrase_organic,phrase,
+keyword,phrase_organic,database,
+keyword,phrase_organic,display_limit,
+keyword,phrase_organic,export_columns,Dr;Ur
+keyword,phrase_organic,required,keyword;database
+keyword,phrase_organic,description,This report lists domains that are ranking in Google's top 100 organic search results with a requested keyword.
+keyword,phrase_adwords,phrase,
+keyword,phrase_adwords,database,
+keyword,phrase_adwords,display_limit,
+keyword,phrase_adwords,export_columns,Dr;Ur;Vu
+keyword,phrase_adwords,required,keyword;database
+keyword,phrase_adwords,description,This report lists domains that are ranking in Google's paid search results with a requested keyword.
+keyword,phrase_related,phrase,
+keyword,phrase_related,database,
+keyword,phrase_related,display_limit,
+keyword,phrase_related,export_columns,Ph;Nq;Cp;Co;Nr;Td;Rr;Fk
+keyword,phrase_related,required,keyword;database
+keyword,phrase_related,description,"This report provides an extended list of related keywords, synonyms, and variations relevant to a queried term in a chosen database."
+keyword,phrase_adwords_historical,phrase,
+keyword,phrase_adwords_historical,database,
+keyword,phrase_adwords_historical,display_limit,
+keyword,phrase_adwords_historical,export_columns,Dn;Dt;Po;Ur;Tt;Ds;Vu;At;Ac;Ad
+keyword,phrase_adwords_historical,required,keyword;database
+keyword,phrase_adwords_historical,description,This report shows domains that have bid on a requested keyword in the last 12 months and their positions in paid search results.
+keyword,phrase_fullsearch,phrase,
+keyword,phrase_fullsearch,database,
+keyword,phrase_fullsearch,display_limit,
+keyword,phrase_fullsearch,export_columns,Ph;Nq;Cp;Co;Nr;Td;Fk
+keyword,phrase_fullsearch,required,keyword;database
+keyword,phrase_fullsearch,description,"The report provides a list of broad matches and alternate search queries, including particular keywords or keyword expressions."
+keyword,phrase_questions,phrase,
+keyword,phrase_questions,database,
+keyword,phrase_questions,export_columns,Ph;Nq;Cp;Co;Nr;Td
+keyword,phrase_questions,display_limit,
+keyword,phrase_questions,required,keyword;database
+keyword,phrase_questions,description,The report provides a list of phrase questions relevant to a queried term in a chosen database.
+keyword,phrase_kdi,phrase,
+keyword,phrase_kdi,database,
+keyword,phrase_kdi,export_columns,Ph;Kd
+keyword,phrase_kdi,required,keyword;database
+keyword,phrase_kdi,description,"This report provides keyword difficulty, an index that helps to estimate how difficult it would be to seize competitors' positions in organic search within the Google's top 100 with an indicated search term."
+overview,domain_ranks,domain,
+overview,domain_ranks,database,
+overview,domain_ranks,display_limit,
+overview,domain_ranks,export_columns,Db;Dt;Dn;Rk;Or;Ot;Oc;Ad;At;Ac;Sh;Sv;FKn;FPn
+overview,domain_ranks,required,domain
+overview,domain_ranks,description,This report provides live or historical data on a domain’s keyword rankings in both organic and paid search in all regional databases.
+overview,domain_rank,domain,
+overview,domain_rank,database,
+overview,domain_rank,export_columns,Dn;Rk;Or;Xn;Ot;Oc;Ad;At;Ac;FKn;FPn
+overview,domain_rank,required,domain;database
+overview,domain_rank,description,This report provides live or historical data on a domain’s keyword rankings in both organic and paid search in a chosen regional database.
+overview,domain_rank_history,domain,
+overview,domain_rank_history,database,
+overview,domain_rank_history,display_limit,
+overview,domain_rank_history,export_columns,Rk;Or;Xn;Ot;Oc;Ad;At;Ac;Dt;FKn;FPn
+overview,domain_rank_history,required,domain;database
+overview,domain_rank_history,description,This report provides live and historical data on a domain’s keyword rankings in both organic and paid search in a chosen database.
+overview,rank_difference,database,
+overview,rank_difference,display_limit,
+overview,rank_difference,export_columns,Dn;Rk;Or;Ot;Oc;Ad;At;Ac;Om;Tm;Um;Am;Bm;Cm
+overview,rank_difference,required,database
+overview,rank_difference,description,"This report shows changes in the number of keywords, traffic, and budget estimates of the most popular websites in Google's top 100 and paid search results."
+overview,rank,database,
+overview,rank,display_limit,
+overview,rank,export_columns,Dn;Rk;Or;Ot;Oc;Ad;At;Ac
+overview,rank,required,database
+overview,rank,description,This report lists the most popular domains ranked by traffic originating from Google's top 100 organic search results.

@@ -1,0 +1,12 @@
+name: semRush_reports_demo
+title: semRush_reports_demo
+username:
+account: ericvc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2626527
+bundleId: 3453317
+url: https://ericvc.shinyapps.io/semRush_reports_demo/
+when: 1596085467.87734
+asMultiple: FALSE
+asStatic: FALSE

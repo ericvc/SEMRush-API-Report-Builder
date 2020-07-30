@@ -1,0 +1,13 @@
+name: SEO_Reports
+title: SEO_Reports
+username:
+account: tivbranding
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2628205
+bundleId: 3455758
+url: https://tivbranding.shinyapps.io/SEO_Reports/
+when: 1596131462.85468
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: app.html|desktop.ini

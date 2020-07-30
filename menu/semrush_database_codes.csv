@@ -1,0 +1,136 @@
+Database_code,Database_region,Google_search_domain
+us,United States,google.com
+uk,United Kingdom,google.co.uk
+ca,Canada,google.ca
+ru,Russia,google.ru
+de,Germany,google.de
+fr,France,google.fr
+es,Spain,google.es
+it,Italy,google.it
+br,Brazil,google.com.br
+au,Australia,google.com.au
+ar,Argentina,google.com.ar
+be,Belgium,google.be
+ch,Switzerland,google.ch
+dk,Denmark,google.dk
+fi,Finland,google.fi
+hk,Hong Kong,google.com.hk
+ie,Ireland,google.ie
+il,Israel,google.co.il
+mx,Mexico,google.com.mx
+nl,Netherlands,google.nl
+no,Norway,google.no
+pl,Poland,google.pl
+se,Sweden,google.se
+sg,Singapore,google.com.sg
+tr,Turkey,google.com.tr
+jp,Japan,google.co.jp
+in,India,google.co.in
+hu,Hungary,google.hu
+af,Afghanistan,google.com.af
+al,Albania,google.al
+dz,Algeria,google.dz
+ao,Angola,google.co.ao
+am,Armenia,google.am
+at,Austria,google.at
+az,Azerbaijan,google.az
+bh,Bahrain,google.com.bh
+bd,Bangladesh,google.com.bd
+by,Belarus,google.by
+bz,Belize,google.com.bz
+bo,Bolivia,google.com.bo
+ba,Bosnia and Herzegovina,google.ba
+bw,Botswana,google.co.bw
+bn,Brunei,google.com.bn
+bg,Bulgaria,google.bg
+cv,Cabo Verde,google.cv
+kh,Cambodia,google.com.kh
+cm,Cameroon,google.cm
+cl,Chile,google.cl
+co,Colombia,google.com.co
+cr,Costa Rica,google.co.cr
+hr,Croatia,google.hr
+cy,Cyprus,google.com.cy
+cz,Czech Republic,google.cz
+cd,Congo,google.cd
+do,Dominican Republic,google.com.do
+ec,Ecuador,google.com.ec
+eg,Egypt,google.com.eg
+sv,El Salvador,google.com.sv
+ee,Estonia,google.ee
+et,Ethiopia,google.com.et
+ge,Georgia,google.ge
+gh,Ghana,google.com.gh
+gr,Greece,google.gr
+gt,Guatemala,google.com.gt
+gy,Guyana,google.gy
+ht,Haiti,google.ht
+hn,Honduras,google.hn
+is,Iceland,google.is
+id,Indonesia,google.co.id
+jm,Jamaica,google.com.jm
+jo,Jordan,google.jo
+kz,Kazakhstan,google.kz
+kw,Kuwait,google.com.kw
+lv,Latvia,google.lv
+lb,Lebanon,google.com.lb
+lt,Lithuania,google.lt
+lu,Luxembourg,google.lu
+mg,Madagascar,google.mg
+my,Malaysia,google.com.my
+mt,Malta,google.com.mt
+mu,Mauritius,google.mu
+md,Moldova,google.md
+mn,Mongolia,google.mn
+me,Montenegro,google.me
+ma,Morocco,google.co.ma
+mz,Mozambique,google.co.mz
+na,Namibia,google.com.na
+np,Nepal,google.com.np
+nz,New Zealand,google.co.nz
+ni,Nicaragua,google.com.ni
+ng,Nigeria,google.com.ng
+om,Oman,google.com.om
+py,Paraguay,google.com.py
+pe,Peru,google.com.pe
+ph,Philippines,google.com.ph
+pt,Portugal,google.pt
+ro,Romania,google.ro
+sa,Saudi Arabia,google.com.sa
+sn,Senegal,google.sn
+rs,Serbia,google.rs
+sk,Slovakia,google.sk
+si,Slovenia,google.si
+za,South Africa,google.co.za
+kr,South Korea,google.co.kr
+lk,Sri Lanka,google.lk
+th,Thailand,google.co.th
+bs,Bahamas,google.bs
+tt,Trinidad and Tobago,google.tt
+tn,Tunisia,google.tn
+ua,Ukraine,google.com.ua
+ae,United Arab Emirates,google.ae
+uy,Uruguay,google.com.uy
+ve,Venezuela,google.co.ve
+vn,Vietnam,google.com.vn
+zm,Zambia,google.co.zm
+zw,Zimbabwe,google.co.zw
+ly,Libya,google.com.ly
+mobile-us,United States,google.com
+mobile-uk,United Kingdom,google.com
+mobile-ca,Canada,google.ca
+mobile-de,Germany,google.de
+mobile-fr,France,google.fr
+mobile-es,Spain,google.es
+mobile-it,Italy,google.it
+mobile-br,Brazil,google.com.br
+mobile-au,Australia,google.com.au
+mobile-dk,Denmark,google.dk
+mobile-mx,Mexico,google.com.mx
+mobile-nl,Netherlands,google.nl
+mobile-se,Sweden,google.se
+mobile-tr,Turkey,google.com.tr
+mobile-in,India,google.co.in
+mobile-id,Indonesia,google.co.id
+mobile-il,Israel,google.co.il
+pk,Pakistan,google.com.pk
