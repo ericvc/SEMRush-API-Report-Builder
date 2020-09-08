@@ -13,4 +13,4 @@ Users can select one of five report "topics" (advertising, keywords, etc.) to be
 
 ## semRush
 
-To download `semRush` as a standalone R package, visit the package [GitHub repository](github.com/ericvc/semRush) or perform a remote installation using `devtools::github_install('ericvc/semRush')`
+To download `semRush` as a standalone R package, visit the package [GitHub repository](https://github.com/ericvc/semRush) or perform a remote installation using `devtools::github_install('ericvc/semRush')`
