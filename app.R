@@ -62,7 +62,7 @@ body <- dashboardBody(
   fluidPage(
     style = "height:100%;margin-left:6%;margin-right:6%",
     HTML(
-      "<p style='font-size:18px'>Advertising Report generator. Select inputs for each feature or leave blank for default settings. Query the SEMRush data API and download a tabulated report. The generated report can be saved as a .CSV file using the 'Save' button.</p>"
+      "<p style='font-size:18px'>Select inputs for each feature or leave blank for default settings. Query the SEMRush data API and download a tabulated report. The generated report can be saved as a .CSV file using the 'Save' button.</p>"
     ),
     shinyjs::hidden(actionButton(
       "submit",
