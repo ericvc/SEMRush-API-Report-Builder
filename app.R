@@ -1,13 +1,15 @@
-#devtools::install_github("ericvc/semRush")
+#Uncomment to install semRush package
+# devtools::install_github("ericvc/semRush")
 
 
 ## SEMRush Report Builder (v1):
 #This R Shiny app simplifies the creation of customized SEO / marketing reports from
 #data obtained through the SEMRush REST API. Five report topics (advertising, backlinks, domain, keyword, and overview)
 #are supported. For each report topic, the menu options are displayed dynamically (and conditionally) using tabsetPanel
-#functionality. The sidebar menu for each report topic is defined by its own tabPaenl function. Although some report 
-#topics share input variables (e.g., "database"), the input variables for each topic are unique for the purposes of 
-#creating this app. Input and UI variables will not work properly if they appear in more  than one tabPanel group. 
+#functionality. The sidebar menu for each report topic is defined by its own tabPanel function. Although some report
+#topics share input variables (e.g., "database"), the input variables for each topic are unique for the purposes of
+#creating this app. Input and UI variables will not work properly if they appear in more  than one tabPanel group.
+
 
 ## Load packages
 library(tidyverse)
@@ -16,20 +18,17 @@ library(shinyjs)
 library(dashboardthemes)
 library(shinydashboard)
 library(assertthat)
-
-## Load functions in current working directory
-src_files <- list.files("semRush/", full.names = TRUE)
-sapply(src_files, function(x) source(x))
+library(semRush)
 
 
 ## Attach API keys
-#See the "api_keys_example.json" for a template
+#See the "api_keys_example.json" for template
 attach(jsonlite::read_json("api_keys.json"))
 
 
 ## Get menu content
 db_codes = read.csv(
-  "menu/semrush_database_codes.csv", 
+  "menu/semrush_database_codes.csv",
   encoding = "UTF-8",
   header = TRUE,
   stringsAsFactors = FALSE
@@ -47,29 +46,36 @@ body <- dashboardBody(
     HTML(
       ".checkbox-inline {
       margin-left: 0px;
-      margin-right: 15px;
+      margin-right: 0px;
+      -webkit-column-count: 3; /* Chrome, Safari, Opera */
+      -moz-column-count: 3; /* Firefox */
+      column-count: 3;
       }
       .checkbox-inline+.checkbox-inline {
       margin-left: 0px;
-      margin-right: 15px;
+      margin-right: 0px;
       }
       "
     )
-    )),
+  )),
   shinyDashboardThemes(theme = "grey_light"),
   fluidPage(
     style = "height:100%;margin-left:6%;margin-right:6%",
-    HTML("<p style='font-size:18px'>Advertising Report generator. Select inputs for each feature or leave blank for default settings. Query the SEMRush data API and download a tabulated report. The generated report can be saved as a .CSV file using the 'Save' button.</p>"),
+    HTML(
+      "<p style='font-size:18px'>Advertising Report generator. Select inputs for each feature or leave blank for default settings. Query the SEMRush data API and download a tabulated report. The generated report can be saved as a .CSV file using the 'Save' button.</p>"
+    ),
     shinyjs::hidden(actionButton(
       "submit",
       "Submit",
       icon = icon("table"),
       width = "0%"
     ))
-    ),
+  ),
   fluidRow(
     style = "height:100%;margin-left:7%;margin-right:7%",
-    HTML("<b><a style='color:black' href='https://www.semrush.com/api-analytics/#columns'>SEMRush API Export Column Details</a><b>"),
+    HTML(
+      "<b><a style='color:black' href='https://www.semrush.com/api-analytics/#columns'>SEMRush API Export Column Details</a><b>"
+    ),
     br(),
     uiOutput("account_balance")
   ),
@@ -118,7 +124,7 @@ sidebar <- dashboardSidebar(
                  overflow: visible;
                  }
                  ")
-            )),
+          )),
           cellWidths = c("0%", "50%", "35%"),
           selectInput(
             "device_type_adv",
@@ -142,12 +148,13 @@ sidebar <- dashboardSidebar(
             min = 1,
             max = 1e3
           )
-            ),
-        checkboxGroupInput(
-          inline = FALSE,
+        ),
+        selectInput(
+          choices = "",
+          multiple = TRUE,
           inputId = "export_columns_adv",
           label = "Export Columns (leave blank for all)"
-        )
+        ),
       )
     ),
     tabPanel(
@@ -180,7 +187,7 @@ sidebar <- dashboardSidebar(
                  overflow: visible;
                  }
                  ")
-            )),
+          )),
           cellWidths = c("0%", "45%", "35%"),
           selectInput(
             "timespan_bac",
@@ -195,9 +202,10 @@ sidebar <- dashboardSidebar(
             min = 1,
             max = 1e3
           )
-            ),
-        checkboxGroupInput(
-          inline = FALSE,
+        ),
+        selectInput(
+          choices = "",
+          multiple = TRUE,
           inputId = "export_columns_bac",
           label = "Export Columns (leave blank for all)"
         )
@@ -228,7 +236,7 @@ sidebar <- dashboardSidebar(
                  overflow: visible;
                  }
                  ")
-            )),
+          )),
           cellWidths = c("0%", "45%", "35%"),
           selectInput(
             "database_dom",
@@ -243,9 +251,10 @@ sidebar <- dashboardSidebar(
             min = 1,
             max = 1e3
           )
-            ),
-        checkboxGroupInput(
-          inline = FALSE,
+        ),
+        selectInput(
+          choices = "",
+          multiple = TRUE,
           inputId = "export_columns_dom",
           label = "Export Columns (leave blank for all)"
         )
@@ -275,7 +284,7 @@ sidebar <- dashboardSidebar(
                  overflow: visible;
                  }
                  ")
-            )),
+          )),
           cellWidths = c("0%", "45%", "35%"),
           selectInput(
             "database_key",
@@ -290,9 +299,10 @@ sidebar <- dashboardSidebar(
             min = 1,
             max = 1e3
           )
-            ),
-        checkboxGroupInput(
-          inline = FALSE,
+        ),
+        selectInput(
+          choices = "",
+          multiple = TRUE,
           inputId = "export_columns_key",
           label = "Export Columns (leave blank for all)"
         )
@@ -322,7 +332,7 @@ sidebar <- dashboardSidebar(
                  overflow: visible;
                  }
                  ")
-            )),
+          )),
           cellWidths = c("0%", "45%", "35%"),
           selectInput(
             "database_ove",
@@ -337,9 +347,10 @@ sidebar <- dashboardSidebar(
             min = 1,
             max = 1e3
           )
-            ),
-        checkboxGroupInput(
-          inline = FALSE,
+        ),
+        selectInput(
+          choices = "",
+          multiple = TRUE,
           inputId = "export_columns_ove",
           label = "Export Columns (leave blank for all)"
         )
@@ -349,7 +360,7 @@ sidebar <- dashboardSidebar(
   actionButton("submit",
                "Submit",
                icon = icon("table"))
-    )
+)
 
 
 ## Assemble UI
@@ -365,6 +376,7 @@ body)
 
 ## Define server logic
 server <- function(input, output, session) {
+  
   # Select menu options from report type
   observeEvent(input$report, {
     updateTabsetPanel(session, "switcher", selected = input$report)
@@ -421,10 +433,9 @@ server <- function(input, output, session) {
     reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)))
     choices <- choices[reorder]
     
-    updateCheckboxGroupInput(session,
-                             "export_columns_adv",
-                             choices = choices,
-                             inline = TRUE)
+    updateSelectizeInput(session,
+                         "export_columns_adv",
+                         choices = choices)
   })
   
   #Prepare export columns - backlinks reports
@@ -434,13 +445,12 @@ server <- function(input, output, session) {
   
   observeEvent(export_columns_bac(), {
     choices <- strsplit(export_columns_bac()$args, ";") %>% unlist()
-    reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)))
+    reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)), decreasing = FALSE)
     choices <- choices[reorder]
     
-    updateCheckboxGroupInput(session,
-                             "export_columns_bac",
-                             choices = choices,
-                             inline = TRUE)
+    updateSelectizeInput(session,
+                         "export_columns_bac",
+                         choices = choices)
   })
   
   #Prepare export columns - domain reports
@@ -451,12 +461,11 @@ server <- function(input, output, session) {
   observeEvent(export_columns_dom(), {
     choices <- strsplit(export_columns_dom()$args, ";") %>% unlist()
     reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)))
-    choices <- choices[reorder]
+    choices <- choices[reorder] %>% str_remove_all(" ")
     
-    updateCheckboxGroupInput(session,
-                             "export_columns_dom",
-                             choices = choices,
-                             inline = TRUE)
+    updateSelectizeInput(session,
+                         "export_columns_dom",
+                         choices = choices)
   })
   
   #Prepare export columns - keyword reports
@@ -469,10 +478,9 @@ server <- function(input, output, session) {
     reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)))
     choices <- choices[reorder]
     
-    updateCheckboxGroupInput(session,
-                             "export_columns_key",
-                             choices = choices,
-                             inline = TRUE)
+    updateSelectizeInput(session,
+                         "export_columns_key",
+                         choices = choices)
   })
   
   #Prepare export columns - overview reports
@@ -485,10 +493,9 @@ server <- function(input, output, session) {
     reorder <- order(sapply(choices, function(x) sapply(strsplit(x,""), length)))
     choices <- choices[reorder]
     
-    updateCheckboxGroupInput(session,
-                             "export_columns_ove",
-                             choices = choices,
-                             inline = TRUE)
+    updateSelectizeInput(session,
+                         "export_columns_ove",
+                         choices = choices)
   })
   
   # Display required inputs
